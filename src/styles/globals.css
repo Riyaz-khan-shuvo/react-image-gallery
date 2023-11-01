@@ -1,0 +1,18 @@
+/* for last row design */
+
+.custom-col {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.custom-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 3fr);
+    gap: 1rem;
+
+    /* 1 element in a row on mobile */
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
