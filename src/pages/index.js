@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import data from '../../data.json';
+import MainHeader from '@/components/layouts/mainLayout/MainHeader';
 
 export default function Home() {
   const [products, setProducts] = useState(data);
@@ -25,85 +26,86 @@ export default function Home() {
     }
   };
 
-  console.log(selectedImages);
 
   return (
-    <main className="">
+    <main className="my-3">
       <div className="container">
-        <h1 className="">List</h1>
-        <div className="row">
-          <div className="col-md-5 my-3">
-            <div
-              className={`card ${selectedImages.includes(0) ? 'selected' : ''}`}
-              draggable
-              onDragStart={() => (dragProduct.current = 0)}
-              onDragEnter={() => (draggedOverProduct.current = 0)}
-              onDragEnd={handleSort}
-              onDragOver={(e) => e.preventDefault()}
-              onClick={() => handleImageSelection(0)}
-            >
-              <div className="p-3">
-
-                <div className="checkbox">
-                  <input type="checkbox" checked={selectedImages.includes(0)} onChange={() => handleImageSelection(0)} />
-                </div>
-                <img className='img-fluid' src={products[0].productImage} alt="" />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-md-7">
+        <div className="card">
+          <MainHeader  selectedImages={selectedImages}/>
+          <div className="px-5">
             <div className="row">
-              {products.slice(1, 7).map((product, index) => (
+              <div className="col-md-5 my-3">
                 <div
-                  key={index + 1}
-                  className={`col-md-4 my-3 ${selectedImages.includes(index + 1) ? 'selected' : ''}`}
+                  className={`card products ${selectedImages.includes(0) ? 'selected' : ''}`}
                   draggable
-                  onDragStart={() => (dragProduct.current = index + 1)}
-                  onDragEnter={() => (draggedOverProduct.current = index + 1)}
+                  onDragStart={() => (dragProduct.current = 0)}
+                  onDragEnter={() => (draggedOverProduct.current = 0)}
                   onDragEnd={handleSort}
                   onDragOver={(e) => e.preventDefault()}
-                  onClick={() => handleImageSelection(index + 1)}
+                  onClick={() => handleImageSelection(0)}
                 >
-                  <div className="card">
+                  <div className="">
 
-                    <div className="p-3">
-                      <div className="checkbox" onClick={(e) => e.stopPropagation()}>
-                        <input type="checkbox" checked={selectedImages.includes(index + 1)} onChange={() => handleImageSelection(index + 1)} />
-                      </div>
-                      <img className='img-fluid' src={product.productImage} alt="" />
-
+                    <div className="checkbox">
+                      <input type="checkbox" checked={selectedImages.includes(0)} onChange={() => handleImageSelection(0)} />
                     </div>
+                    <img className='img-fluid rounded' src={products[0].productImage} alt="" />
+
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-7">
+                <div className="row">
+                  {products.slice(1, 7).map((product, index) => (
+                    <div
+                      key={index + 1}
+                      className={`col-md-4 my-3 ${selectedImages.includes(index + 1) ? 'selected' : ''}`}
+                      draggable
+                      onDragStart={() => (dragProduct.current = index + 1)}
+                      onDragEnter={() => (draggedOverProduct.current = index + 1)}
+                      onDragEnd={handleSort}
+                      onDragOver={(e) => e.preventDefault()}
+                      onClick={() => handleImageSelection(index + 1)}
+                    >
+                      <div className="card products">
+
+                        <div className="">
+                          <div className="checkbox" onClick={(e) => e.stopPropagation()}>
+                            <input type="checkbox" checked={selectedImages.includes(index + 1)} onChange={() => handleImageSelection(index + 1)} />
+                          </div>
+                          <img className='img-fluid rounded' src={product.productImage} alt="" />
+
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="custom-grid mb-3">
+              {products.slice(7).map((product, index) => (
+                <div
+                  key={index + 7}
+                  className={`custom-col card products ${selectedImages.includes(index + 7) ? 'selected' : ''}`}
+                  draggable
+                  onDragStart={() => (dragProduct.current = index + 7)}
+                  onDragEnter={() => (draggedOverProduct.current = index + 7)}
+                  onDragEnd={handleSort}
+                  onDragOver={(e) => e.preventDefault()}
+                  onClick={() => handleImageSelection(index + 7)}
+                >
+                  
+                  <div className="">
+
+                    <div className="checkbox" onClick={(e) => e.stopPropagation()}>
+                      <input type="checkbox" checked={selectedImages.includes(index + 7)} onChange={() => handleImageSelection(index + 7)} />
+                    </div>
+                    <img className='img-fluid rounded w-100' src={product.productImage} alt="" />
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-        <div className="custom-grid">
-          {products.slice(7).map((product, index) => (
-            <div
-              key={index + 7}
-              className={`custom-col card ${selectedImages.includes(index + 7) ? 'selected' : ''}`}
-              draggable
-              onDragStart={() => (dragProduct.current = index + 7)}
-              onDragEnter={() => (draggedOverProduct.current = index + 7)}
-              onDragEnd={handleSort}
-              onDragOver={(e) => e.preventDefault()}
-              onClick={() => handleImageSelection(index + 7)}
-            >
-              {/* {selectedImages.includes(index + 7) && (
-                <div className="selected-icon">Selected</div>
-              )} */}
-              <div className="p-3">
-
-                <div className="checkbox" onClick={(e) => e.stopPropagation()}>
-                  <input type="checkbox" checked={selectedImages.includes(index + 7)} onChange={() => handleImageSelection(index + 7)} />
-                </div>
-                <img className='img-fluid' src={product.productImage} alt="" />
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </main>

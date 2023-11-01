@@ -16,12 +16,17 @@
         grid-template-columns: 1fr;
     }
 }
-
-.card .checkbox {
+.products .checkbox {
+    position: absolute;
+    top: 15px; 
+    left: 15px; 
     visibility: hidden;
 }
 
-.selected .checkbox, /* Show checkbox for selected images */
-.card:hover .checkbox { /* Show checkbox on hover */
+.selected .checkbox,
+.products:hover .checkbox {
     visibility: visible;
+    position: absolute;
+    top: 15px;
+    left: 15px; 
 }
