@@ -1,3 +1,30 @@
 [
-    {}
+    {
+        "id": 1,
+        "productImage": "https://i.postimg.cc/nh1Lkw1f/image-1.webp"
+    },
+    {
+        "id": 2,
+        "productImage": "https://i.postimg.cc/HLskP4Sc/image-2.webp"
+    },
+    {
+        "id": 3,
+        "productImage": "https://i.postimg.cc/Cx01bVk4/image-3.webp"
+    },
+    {
+        "id": 4,
+        "productImage": "https://i.postimg.cc/qRNMpBHp/image-4.webp"
+    },
+    {
+        "id": 5,
+        "productImage": "https://i.postimg.cc/TP738LSk/image-5.webp"
+    },
+    {
+        "id": 6,
+        "productImage": "https://i.postimg.cc/RVKh306F/image-6.webp"
+    },
+    {
+        "id": 7,
+        "productImage": "https://i.postimg.cc/0Qh5jg9D/image-7.webp"
+    }
 ]
