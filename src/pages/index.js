@@ -79,11 +79,15 @@ export default function Home() {
                 >
 
 
-                  <div className="checkbox">
-                    <input type="checkbox" checked={selectedImages.includes(0)} onChange={() => handleImageSelection(0)} />
-                  </div>
-                  <img className='img-fluid rounded' src={products[0].productImage} alt="" />
+                  <div className='product-image'>
+                    <div className="checkbox">
+                      <input type="checkbox" checked={selectedImages.includes(0)} onChange={() => handleImageSelection(0)} />
+                    </div>
+                    <img className='img-fluid rounded' src={products[0].productImage} alt="" />
+                    <div className='product-overlay'>
 
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -105,12 +109,15 @@ export default function Home() {
                       onClick={() => handleImageSelection(index + 1)}
                     >
                       <div className="card products">
+                        <div className='product-image'>
+                          <div className="checkbox" onClick={(e) => e.stopPropagation()}>
+                            <input type="checkbox" checked={selectedImages.includes(index + 1)} onChange={() => handleImageSelection(index + 1)} />
+                          </div>
+                          <img className='img-fluid rounded' src={product.productImage} alt="" />
+                          <div className='product-overlay'>
 
-
-                        <div className="checkbox" onClick={(e) => e.stopPropagation()}>
-                          <input type="checkbox" checked={selectedImages.includes(index + 1)} onChange={() => handleImageSelection(index + 1)} />
+                          </div>
                         </div>
-                        <img className='img-fluid rounded' src={product.productImage} alt="" />
 
                       </div>
                     </div>
@@ -138,12 +145,15 @@ export default function Home() {
                   onDragOver={(e) => e.preventDefault()}
                   onClick={() => handleImageSelection(index + 7)}
                 >
+                  <div className='product-image'>
+                    <div className="checkbox" onClick={(e) => e.stopPropagation()}>
+                      <input type="checkbox" checked={selectedImages.includes(index + 7)} onChange={() => handleImageSelection(index + 7)} />
+                    </div>
+                    <img className='img-fluid rounded w-100' src={product.productImage} alt="" />
+                    <div className='product-overlay'>
 
-
-                  <div className="checkbox" onClick={(e) => e.stopPropagation()}>
-                    <input type="checkbox" checked={selectedImages.includes(index + 7)} onChange={() => handleImageSelection(index + 7)} />
+                    </div>
                   </div>
-                  <img className='img-fluid rounded w-100' src={product.productImage} alt="" />
                 </div>
               ))}
 

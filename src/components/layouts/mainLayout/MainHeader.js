@@ -7,7 +7,7 @@ const MainHeader = ({ selectedImages, onDelete }) => {
             <div className='d-flex justify-content-between'>
                 <div>
                     {selectedImages.length > 0 ? <>
-                        <p className='ms-3 py-3 form-check'> <input class="form-check-input mt-2 me-3" type="checkbox" checked />   <span className='h4'> {selectedImages.length} Files Selected  </span> </p>
+                        <p className='ms-3 py-3 form-check'> <input className="form-check-input mt-2 me-3" type="checkbox" checked />   <span className='h4'> {selectedImages.length} Files Selected  </span> </p>
                     </> : <h4 className='ms-3 py-3 h4'> Gallery </h4>}
                 </div>
                 <div className='m-3'>
