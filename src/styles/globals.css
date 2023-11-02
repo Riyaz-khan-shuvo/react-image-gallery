@@ -35,3 +35,9 @@
 p.delete-btn:hover {
     text-decoration: underline;
 }
+
+.dotted-border {
+    border: 2px dotted #a8a8a8 !important;
+    padding: 20px;
+    text-align: center;
+}
