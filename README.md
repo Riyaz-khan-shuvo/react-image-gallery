@@ -30,8 +30,9 @@ You can check out a live demo of this Next.js Image Gallery [here](https://react
 
 - Next.js
 - React
-- HTML/CSS
+- CSS
 - JavaScript
+- Bootstrap
 
 ## Getting Started
 
