@@ -16,10 +16,11 @@
         grid-template-columns: 1fr;
     }
 }
+
 .products .checkbox {
     position: absolute;
-    top: 15px; 
-    left: 15px; 
+    top: 15px;
+    left: 15px;
     visibility: hidden;
 }
 
@@ -28,5 +29,9 @@
     visibility: visible;
     position: absolute;
     top: 15px;
-    left: 15px; 
+    left: 15px;
+}
+
+p.delete-btn:hover {
+    text-decoration: underline;
 }

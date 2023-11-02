@@ -26,12 +26,20 @@ export default function Home() {
     }
   };
 
+  const handleDelete = () => {
+    // Filter out the selected images from the products state
+    const updatedProducts = products.filter((product, index) => !selectedImages.includes(index));
+    setProducts(updatedProducts);
+  
+    // Clear the selected images array
+    setSelectedImages([]);
+  };
 
   return (
     <main className="my-3">
       <div className="container">
         <div className="card">
-          <MainHeader  selectedImages={selectedImages}/>
+        <MainHeader selectedImages={selectedImages} onDelete={handleDelete} />
           <div className="px-5">
             <div className="row">
               <div className="col-md-5 my-3">
