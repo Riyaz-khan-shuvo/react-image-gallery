@@ -17,7 +17,7 @@ A simple image gallery application built with Next.js. This project allows users
 
 ## Demo
 
-You can check out a live demo of this Next.js Image Gallery [here](#your-demo-link).
+You can check out a live demo of this Next.js Image Gallery [here](https://react-image-gallery-by-riyaz.netlify.app/).
 
 ## Features
 
